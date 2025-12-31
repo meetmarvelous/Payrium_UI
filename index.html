@@ -116,16 +116,22 @@
   </div>
 
   <script>
-    /* Configuration: if automatic detection fails, add manual entries here:
+    /* Configuration:
+       If automatic detection fails, add manual entries here:
        Example:
        const files = [
          {title:"About", path:"about.html"},
          {title:"Demo", path:"demos/demo1.html"}
        ];
-       Each path is relative to this index.html location.
+       Each path is relative to the repo root. This page will use the hostedBase below
+       to open pages as they would be served from GitHub Pages.
+
+       hostedBase: set to your GitHub Pages base URL so links open in a new tab:
+       e.g. "https://meetmarvelous.github.io/Payrium_UI/"
     */
     const owner = "meetmarvelous";
     const repo  = "Payrium_UI";
+    const hostedBase = "https://meetmarvelous.github.io/Payrium_UI/"; // <-- ensures links open as hosted
     let files = []; // manual fallback list (leave empty to rely on auto-detection)
 
     const linksEl = document.getElementById('links');
@@ -150,12 +156,18 @@
       return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
+    function ensureTrailingSlash(s){
+      return s.endsWith('/') ? s : s + '/';
+    }
+
     function createLinkCard(item, branch){
       const a = document.createElement('a');
       a.className = 'link';
-      a.href = encodeURI(item.path);
-      a.target = "_self";
-      a.rel = "noopener";
+      // Open hosted page in a new tab (GitHub Pages style)
+      const base = ensureTrailingSlash(hostedBase);
+      a.href = new URL(item.path, base).href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
 
       const left = document.createElement('div'); left.className = 'left';
       const favicon = document.createElement('div'); favicon.className = 'favicon';
@@ -183,17 +195,18 @@
         window.open(url, '_blank', 'noopener');
       });
 
-      // Copy link
+      // Copy hosted link
       const copyBtn = document.createElement('button');
       copyBtn.className = 'icon-btn';
-      copyBtn.title = 'Copy link';
+      copyBtn.title = 'Copy hosted link';
       copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>';
       copyBtn.addEventListener('click', (e)=>{
         e.preventDefault(); e.stopPropagation();
-        const href = new URL(encodeURI(item.path), location.href).href;
-        navigator.clipboard?.writeText(href).then(()=>{
+        const hostedHref = new URL(item.path, ensureTrailingSlash(hostedBase)).href;
+        navigator.clipboard?.writeText(hostedHref).then(()=>{
+          const prev = copyBtn.innerHTML;
           copyBtn.textContent = 'Copied';
-          setTimeout(()=>{ copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>'; },1200);
+          setTimeout(()=>{ copyBtn.innerHTML = prev; },1200);
         }).catch(()=>{ alert('Copy failed — open page and copy the URL manually.'); });
       });
 
