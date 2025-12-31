@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>meetmarvelous — Links</title>
+  <meta name="description" content="A clean link index for meetmarvelous / Payrium_UI — automatically lists all HTML pages in this repo." />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="meetmarvelous — Links" />
+  <meta property="og:description" content="A clean link index for meetmarvelous / Payrium_UI — automatically lists all HTML pages in this repo." />
+  <meta property="og:image" content="https://github.com/meetmarvelous.png" />
+  <style>
+    :root{
+      --bg:#0f172a; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+    }
+    [data-theme="light"]{
+      --bg:#f8fafc; --card:#ffffff; --muted:#475569; --accent:#6d28d9; --glass: rgba(15,23,42,0.03);
+    }
+
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.10), transparent),
+                  linear-gradient(180deg, rgba(2,6,23,0.6), transparent 30%),
+                  var(--bg);
+      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      display:flex; align-items:center; justify-content:center; padding:48px 20px;
+    }
+    .wrap{
+      width:100%; max-width:720px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:16px; padding:28px; box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.04);
+    }
+    header{
+      display:flex; gap:16px; align-items:center; margin-bottom:18px;
+    }
+    .avatar{
+      width:72px; height:72px; border-radius:16px; overflow:hidden; flex:0 0 72px; border:2px solid rgba(255,255,255,0.06);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+    .title{
+      flex:1;
+    }
+    .title h1{margin:0;font-size:20px;letter-spacing:-0.02em;}
+    .title p{margin:4px 0 0;color:var(--muted);font-size:13px;}
+    .controls{display:flex; gap:8px; align-items:center;}
+    .btn{
+      background:var(--glass); border:0; color:inherit; padding:8px 12px; border-radius:10px; cursor:pointer; font-size:13px;
+      display:inline-flex; gap:8px; align-items:center;
+    }
+    .btn svg{opacity:0.9}
+    .links{display:grid; gap:12px; margin-top:20px;}
+    .link{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      padding:12px; border-radius:12px; text-decoration:none; color:inherit; transition:transform .12s ease, box-shadow .12s ease;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .link:hover{transform:translateY(-4px); box-shadow:0 8px 30px rgba(2,6,23,0.45);}
+    .link .left{display:flex; gap:12px; align-items:center; min-width:0;}
+    .favicon{
+      width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#06b6d4); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; flex:0 0 44px;
+    }
+    .meta{overflow:hidden;}
+    .meta .name{font-weight:600; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+    .meta .path{font-size:12px;color:var(--muted); white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+    .actions{display:flex; gap:8px; align-items:center;}
+    .icon-btn{background:transparent; border:0; color:var(--muted); padding:8px; border-radius:8px; cursor:pointer;}
+    .small{font-size:12px;color:var(--muted); margin-top:8px; display:flex; gap:8px; align-items:center;}
+    .placeholder{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02); color:var(--muted); font-size:13px;}
+    footer{margin-top:16px; color:var(--muted); font-size:13px; text-align:center;}
+    @media (max-width:520px){
+      .avatar{width:58px;height:58px;border-radius:12px}
+      .favicon{width:40px;height:40px}
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap card" role="main" aria-labelledby="titleHeading">
+    <header>
+      <div class="avatar" aria-hidden="true">
+        <img src="https://github.com/meetmarvelous.png" alt="meetmarvelous avatar" />
+      </div>
+      <div class="title">
+        <h1 id="titleHeading">meetmarvelous</h1>
+        <p>Payrium_UI — quick links to every HTML page in this repository</p>
+      </div>
+      <div class="controls">
+        <button class="btn" id="refreshBtn" title="Refresh list" aria-label="Refresh list">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12a8 8 0 10-2.65 5.65M20 4v6h-6"/></svg>
+          Refresh
+        </button>
+        <button class="btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          Theme
+        </button>
+      </div>
+    </header>
+
+    <div id="linksArea">
+      <div class="small" id="status">Searching repository for .html files…</div>
+      <div class="links" id="links"></div>
+      <div id="fallback" style="display:none; margin-top:14px;">
+        <div class="placeholder">
+          Could not fetch repository file list. If your site is private or the API is blocked, add manual links below the <code>files</code> array in this page's script (see the top of the script for instructions).
+        </div>
+      </div>
+    </div>
+
+    <footer>Built automatically from repository contents • <a href="https://github.com/meetmarvelous/Payrium_UI" style="color:inherit; text-decoration:underline">Repo</a></footer>
+  </div>
+
+  <script>
+    /* Configuration: if automatic detection fails, add manual entries here:
+       Example:
+       const files = [
+         {title:"About", path:"about.html"},
+         {title:"Demo", path:"demos/demo1.html"}
+       ];
+       Each path is relative to this index.html location.
+    */
+    const owner = "meetmarvelous";
+    const repo  = "Payrium_UI";
+    let files = []; // manual fallback list (leave empty to rely on auto-detection)
+
+    const linksEl = document.getElementById('links');
+    const statusEl = document.getElementById('status');
+    const fallbackEl = document.getElementById('fallback');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const themeToggle = document.getElementById('themeToggle');
+
+    themeToggle.addEventListener('click', toggleTheme);
+    refreshBtn.addEventListener('click', init);
+
+    function toggleTheme(){
+      const root = document.documentElement;
+      const current = root.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+    }
+
+    function niceNameFromPath(path){
+      const parts = path.split('/');
+      const name = parts[parts.length-1].replace(/[-_]/g,' ').replace(/\.html$/i,'');
+      return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    function createLinkCard(item, branch){
+      const a = document.createElement('a');
+      a.className = 'link';
+      a.href = encodeURI(item.path);
+      a.target = "_self";
+      a.rel = "noopener";
+
+      const left = document.createElement('div'); left.className = 'left';
+      const favicon = document.createElement('div'); favicon.className = 'favicon';
+      favicon.textContent = (niceNameFromPath(item.path)[0] || 'P').toUpperCase();
+
+      const meta = document.createElement('div'); meta.className = 'meta';
+      const name = document.createElement('div'); name.className = 'name';
+      name.textContent = item.title || niceNameFromPath(item.path);
+      const pathEl = document.createElement('div'); pathEl.className = 'path';
+      pathEl.textContent = item.path;
+
+      meta.appendChild(name);
+      meta.appendChild(pathEl);
+      left.appendChild(favicon); left.appendChild(meta);
+
+      const actions = document.createElement('div'); actions.className = 'actions';
+      // GitHub blob link
+      const ghbtn = document.createElement('button');
+      ghbtn.className = 'icon-btn';
+      ghbtn.title = 'Open on GitHub';
+      ghbtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h2"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12v6"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12l-7 7"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6"/></svg>';
+      ghbtn.addEventListener('click', (e)=>{
+        e.preventDefault(); e.stopPropagation();
+        const url = `https://github.com/${owner}/${repo}/blob/${branch}/${item.path}`;
+        window.open(url, '_blank', 'noopener');
+      });
+
+      // Copy link
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'icon-btn';
+      copyBtn.title = 'Copy link';
+      copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>';
+      copyBtn.addEventListener('click', (e)=>{
+        e.preventDefault(); e.stopPropagation();
+        const href = new URL(encodeURI(item.path), location.href).href;
+        navigator.clipboard?.writeText(href).then(()=>{
+          copyBtn.textContent = 'Copied';
+          setTimeout(()=>{ copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>'; },1200);
+        }).catch(()=>{ alert('Copy failed — open page and copy the URL manually.'); });
+      });
+
+      actions.appendChild(copyBtn);
+      actions.appendChild(ghbtn);
+
+      a.appendChild(left);
+      a.appendChild(actions);
+
+      return a;
+    }
+
+    async function getRepoTree(branch){
+      const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('Failed to fetch tree: '+res.status);
+      return res.json();
+    }
+
+    async function getDefaultBranch(){
+      const url = `https://api.github.com/repos/${owner}/${repo}`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('Failed to fetch repo metadata: '+res.status);
+      const j = await res.json();
+      return j.default_branch;
+    }
+
+    async function init(){
+      linksEl.innerHTML = '';
+      statusEl.textContent = 'Searching repository for .html files…';
+      fallbackEl.style.display = 'none';
+
+      if(files && files.length){
+        statusEl.textContent = 'Using manual list.';
+        files.forEach(f => {
+          const card = createLinkCard(f, 'main');
+          linksEl.appendChild(card);
+        });
+        return;
+      }
+
+      let branchCandidate = 'main';
+      let tree;
+      try {
+        try {
+          tree = await getRepoTree(branchCandidate);
+        } catch(e){
+          branchCandidate = 'master';
+          tree = await getRepoTree(branchCandidate);
+        }
+      } catch(e){
+        // last attempt: fetch default branch then try
+        try {
+          const defaultBranch = await getDefaultBranch();
+          branchCandidate = defaultBranch;
+          tree = await getRepoTree(branchCandidate);
+        } catch(err){
+          // final fallback -> show message and end
+          statusEl.textContent = 'Automatic detection failed.';
+          fallbackEl.style.display = 'block';
+          console.warn('Repo tree fetch failed:', err);
+          return;
+        }
+      }
+
+      const htmlFiles = (tree.tree || []).filter(it => it.path && it.path.toLowerCase().endsWith('.html'));
+
+      // Exclude this index file if it's in the list
+      const filtered = htmlFiles
+        .filter(it => !(it.path.toLowerCase() === 'index.html' || it.path.toLowerCase().endsWith('/index.html')))
+        .map(it => ({ path: it.path, title: niceNameFromPath(it.path) }))
+        .sort((a,b)=>{
+          // Root files first, then alphabetical
+          const ad = a.path.split('/').length, bd = b.path.split('/').length;
+          if(ad !== bd) return ad - bd;
+          return a.path.localeCompare(b.path);
+        });
+
+      if(filtered.length === 0){
+        statusEl.textContent = 'No HTML pages found (except index). Add pages or add manual entries to the files array in the script.';
+        fallbackEl.style.display = 'block';
+        return;
+      }
+
+      statusEl.textContent = `Found ${filtered.length} page${filtered.length>1?'s':''}.`;
+      filtered.forEach(item => {
+        const card = createLinkCard(item, branchCandidate);
+        linksEl.appendChild(card);
+      });
+    }
+
+    // Run on load
+    init().catch(err => {
+      console.error(err);
+      statusEl.textContent = 'An error occurred while loading links.';
+      fallbackEl.style.display = 'block';
+    });
+
+  </script>
+</body>
+</html>
