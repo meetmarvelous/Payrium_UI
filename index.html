@@ -1,249 +1,481 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>meetmarvelous — Links</title>
-  <meta name="description" content="A clean link index for meetmarvelous / Payrium_UI — automatically lists all HTML pages in this repo." />
+  <title>Payrium UI — Index</title>
+  <meta name="description" content="Index of Payrium UI screens and components." />
   <meta name="theme-color" content="#0f172a" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="meetmarvelous — Links" />
-  <meta property="og:description" content="A clean link index for meetmarvelous / Payrium_UI — automatically lists all HTML pages in this repo." />
-  <meta property="og:image" content="https://github.com/meetmarvelous.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0f172a; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed;
-      --glass: rgba(255,255,255,0.04);
-    }
-    [data-theme="light"]{
-      --bg:#f8fafc; --card:#ffffff; --muted:#475569; --accent:#6d28d9; --glass: rgba(15,23,42,0.03);
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-bg: rgba(30, 41, 59, 0.6);
+      --card-hover-border: rgba(255, 255, 255, 0.15);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-primary: #8b5cf6;
+      --accent-secondary: #3b82f6;
+      --glass: blur(12px);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
 
-    html,body{height:100%;}
-    body{
-      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.10), transparent),
-                  linear-gradient(180deg, rgba(2,6,23,0.6), transparent 30%),
-                  var(--bg);
-      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      display:flex; align-items:center; justify-content:center; padding:48px 20px;
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.15), transparent 40%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
     }
-    .wrap{
-      width:100%; max-width:720px;
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      z-index: 1;
     }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:16px; padding:28px; box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-      backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.04);
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+      padding: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: var(--glass);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
-    header{
-      display:flex; gap:16px; align-items:center; margin-bottom:18px;
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
     }
-    .avatar{
-      width:72px; height:72px; border-radius:16px; overflow:hidden; flex:0 0 72px; border:2px solid rgba(255,255,255,0.06);
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-    .title{
-      flex:1;
+
+    .header-content {
+      flex: 1;
     }
-    .title h1{margin:0;font-size:20px;letter-spacing:-0.02em;}
-    .title p{margin:4px 0 0;color:var(--muted);font-size:13px;}
-    .controls{display:flex; gap:8px; align-items:center;}
-    .btn{
-      background:var(--glass); border:0; color:inherit; padding:8px 12px; border-radius:10px; cursor:pointer; font-size:13px;
-      display:inline-flex; gap:8px; align-items:center;
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
-    .btn svg{opacity:0.9}
-    .links{display:grid; gap:12px; margin-top:20px;}
-    .link{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      padding:12px; border-radius:12px; text-decoration:none; color:inherit; transition:transform .12s ease, box-shadow .12s ease;
-      border:1px solid rgba(255,255,255,0.03);
+
+    p {
+      margin: 6px 0 0;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.5;
     }
-    .link:hover{transform:translateY(-4px); box-shadow:0 8px 30px rgba(2,6,23,0.45);}
-    .link .left{display:flex; gap:12px; align-items:center; min-width:0;}
-    .favicon{
-      width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#06b6d4); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; flex:0 0 44px;
+
+    .controls {
+      display: flex;
+      gap: 10px;
     }
-    .meta{overflow:hidden;}
-    .meta .name{font-weight:600; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
-    .meta .path{font-size:12px;color:var(--muted); white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
-    .actions{display:flex; gap:8px; align-items:center;}
-    .icon-btn{background:transparent; border:0; color:var(--muted); padding:8px; border-radius:8px; cursor:pointer;}
-    .small{font-size:12px;color:var(--muted); margin-top:8px; display:flex; gap:8px; align-items:center;}
-    .placeholder{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02); color:var(--muted); font-size:13px;}
-    footer{margin-top:16px; color:var(--muted); font-size:13px; text-align:center;}
-    @media (max-width:520px){
-      .avatar{width:58px;height:58px;border-radius:12px}
-      .favicon{width:40px;height:40px}
+
+    .btn-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn-control:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      background: var(--card-hover-bg);
+      border-color: var(--card-hover-border);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      overflow: hidden;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #f1f5f9;
+    }
+
+    .card-path {
+      font-size: 13px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'SF Mono', 'Roboto Mono', monospace;
+      opacity: 0.7;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      margin-left: 12px;
+      z-index: 2;
+      /* Ensure buttons are clickable */
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .status-msg {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .placeholder {
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: border-color 0.2s;
+    }
+
+    footer a:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .controls {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .card-info {
+        gap: 12px;
+      }
+
+      .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
-<body data-theme="dark">
-  <div class="wrap card" role="main" aria-labelledby="titleHeading">
+
+<body>
+  <div class="container">
     <header>
-      <div class="avatar" aria-hidden="true">
+      <div class="avatar">
         <img src="https://github.com/meetmarvelous.png" alt="meetmarvelous avatar" />
       </div>
-      <div class="title">
-        <h1 id="titleHeading">meetmarvelous</h1>
-        <p>Payrium_UI — quick links to every HTML page in this repository</p>
+      <div class="header-content">
+        <h1>Payrium UI</h1>
+        <p>A collection of interface screens and components for the Payrium wallet application.</p>
       </div>
       <div class="controls">
-        <button class="btn" id="refreshBtn" title="Refresh list" aria-label="Refresh list">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12a8 8 0 10-2.65 5.65M20 4v6h-6"/></svg>
+        <button class="btn-control" id="refreshBtn" title="Refresh list">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 4v6h-6" />
+            <path d="M1 20v-6h6" />
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+          </svg>
           Refresh
-        </button>
-        <button class="btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
-          <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          Theme
         </button>
       </div>
     </header>
 
     <div id="linksArea">
-      <div class="small" id="status">Searching repository for .html files…</div>
-      <div class="links" id="links"></div>
-      <div id="fallback" style="display:none; margin-top:14px;">
+      <div class="status-msg" id="status">Scanning repository...</div>
+      <div class="grid" id="links"></div>
+      <div id="fallback" style="display:none; margin-top:20px;">
         <div class="placeholder">
-          Could not fetch repository file list. If your site is private or the API is blocked, add manual links below the <code>files</code> array in this page's script (see the top of the script for instructions).
+          Could not fetch repository file list. If your site is private or the API is blocked, add manual links in the
+          script.
         </div>
       </div>
     </div>
 
-    <footer>Built automatically from repository contents • <a href="https://github.com/meetmarvelous/Payrium_UI" style="color:inherit; text-decoration:underline">Repo</a></footer>
+    <footer>
+      Built automatically from <a href="https://github.com/meetmarvelous/Payrium_UI" target="_blank">repository
+        contents</a>
+    </footer>
   </div>
 
   <script>
-    /* Configuration:
-       If automatic detection fails, add manual entries here:
-       Example:
-       const files = [
-         {title:"About", path:"about.html"},
-         {title:"Demo", path:"demos/demo1.html"}
-       ];
-       Each path is relative to the repo root. This page will use the hostedBase below
-       to open pages as they would be served from GitHub Pages.
-
-       hostedBase: set to your GitHub Pages base URL so links open in a new tab:
-       e.g. "https://meetmarvelous.github.io/Payrium_UI/"
-    */
+    /* Configuration */
     const owner = "meetmarvelous";
-    const repo  = "Payrium_UI";
-    const hostedBase = "https://meetmarvelous.github.io/Payrium_UI/"; // <-- ensures links open as hosted
-    let files = []; // manual fallback list (leave empty to rely on auto-detection)
+    const repo = "Payrium_UI";
+    const hostedBase = "https://meetmarvelous.github.io/Payrium_UI/";
+    let files = []; // manual fallback list
 
     const linksEl = document.getElementById('links');
     const statusEl = document.getElementById('status');
     const fallbackEl = document.getElementById('fallback');
     const refreshBtn = document.getElementById('refreshBtn');
-    const themeToggle = document.getElementById('themeToggle');
 
-    themeToggle.addEventListener('click', toggleTheme);
     refreshBtn.addEventListener('click', init);
 
-    function toggleTheme(){
-      const root = document.documentElement;
-      const current = root.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-    }
-
-    function niceNameFromPath(path){
+    function niceNameFromPath(path) {
       const parts = path.split('/');
-      const name = parts[parts.length-1].replace(/[-_]/g,' ').replace(/\.html$/i,'');
+      const name = parts[parts.length - 1].replace(/[-_]/g, ' ').replace(/\.html$/i, '');
       return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
-    function ensureTrailingSlash(s){
+    function ensureTrailingSlash(s) {
       return s.endsWith('/') ? s : s + '/';
     }
 
-    function createLinkCard(item, branch){
-      const a = document.createElement('a');
-      a.className = 'link';
-      // Open hosted page in a new tab (GitHub Pages style)
+    function createLinkCard(item, branch) {
       const base = ensureTrailingSlash(hostedBase);
-      a.href = new URL(item.path, base).href;
+      const hostedUrl = new URL(item.path, base).href;
+
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = hostedUrl;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
 
-      const left = document.createElement('div'); left.className = 'left';
-      const favicon = document.createElement('div'); favicon.className = 'favicon';
-      favicon.textContent = (niceNameFromPath(item.path)[0] || 'P').toUpperCase();
+      // Card Content
+      const info = document.createElement('div');
+      info.className = 'card-info';
 
-      const meta = document.createElement('div'); meta.className = 'meta';
-      const name = document.createElement('div'); name.className = 'name';
-      name.textContent = item.title || niceNameFromPath(item.path);
-      const pathEl = document.createElement('div'); pathEl.className = 'path';
+      const icon = document.createElement('div');
+      icon.className = 'card-icon';
+      icon.textContent = (niceNameFromPath(item.path)[0] || 'P').toUpperCase();
+
+      const text = document.createElement('div');
+      text.className = 'card-text';
+
+      const title = document.createElement('div');
+      title.className = 'card-title';
+      title.textContent = item.title || niceNameFromPath(item.path);
+
+      const pathEl = document.createElement('div');
+      pathEl.className = 'card-path';
       pathEl.textContent = item.path;
 
-      meta.appendChild(name);
-      meta.appendChild(pathEl);
-      left.appendChild(favicon); left.appendChild(meta);
+      text.appendChild(title);
+      text.appendChild(pathEl);
+      info.appendChild(icon);
+      info.appendChild(text);
 
-      const actions = document.createElement('div'); actions.className = 'actions';
-      // GitHub blob link
-      const ghbtn = document.createElement('button');
-      ghbtn.className = 'icon-btn';
-      ghbtn.title = 'Open on GitHub';
-      ghbtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h2"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12v6"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12l-7 7"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6"/></svg>';
-      ghbtn.addEventListener('click', (e)=>{
-        e.preventDefault(); e.stopPropagation();
-        const url = `https://github.com/${owner}/${repo}/blob/${branch}/${item.path}`;
-        window.open(url, '_blank', 'noopener');
+      // Actions
+      const actions = document.createElement('div');
+      actions.className = 'card-actions';
+
+      // Copy Link Button
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'action-btn';
+      copyBtn.title = 'Copy Link';
+      copyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+      copyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigator.clipboard?.writeText(hostedUrl).then(() => {
+          const original = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+          setTimeout(() => { copyBtn.innerHTML = original; }, 1500);
+        }).catch(() => alert('Failed to copy URL'));
       });
 
-      // Copy hosted link
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'icon-btn';
-      copyBtn.title = 'Copy hosted link';
-      copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="3" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>';
-      copyBtn.addEventListener('click', (e)=>{
-        e.preventDefault(); e.stopPropagation();
-        const hostedHref = new URL(item.path, ensureTrailingSlash(hostedBase)).href;
-        navigator.clipboard?.writeText(hostedHref).then(()=>{
-          const prev = copyBtn.innerHTML;
-          copyBtn.textContent = 'Copied';
-          setTimeout(()=>{ copyBtn.innerHTML = prev; },1200);
-        }).catch(()=>{ alert('Copy failed — open page and copy the URL manually.'); });
+      // Open Page Button (Replaces GitHub Blob Link)
+      const openBtn = document.createElement('button');
+      openBtn.className = 'action-btn';
+      openBtn.title = 'Open Page';
+      openBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open(hostedUrl, '_blank', 'noopener');
       });
 
       actions.appendChild(copyBtn);
-      actions.appendChild(ghbtn);
+      actions.appendChild(openBtn);
 
-      a.appendChild(left);
+      a.appendChild(info);
       a.appendChild(actions);
 
       return a;
     }
 
-    async function getRepoTree(branch){
+    async function getRepoTree(branch) {
       const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
       const res = await fetch(url);
-      if(!res.ok) throw new Error('Failed to fetch tree: '+res.status);
+      if (!res.ok) throw new Error('Failed to fetch tree: ' + res.status);
       return res.json();
     }
 
-    async function getDefaultBranch(){
+    async function getDefaultBranch() {
       const url = `https://api.github.com/repos/${owner}/${repo}`;
       const res = await fetch(url);
-      if(!res.ok) throw new Error('Failed to fetch repo metadata: '+res.status);
+      if (!res.ok) throw new Error('Failed to fetch repo metadata: ' + res.status);
       const j = await res.json();
       return j.default_branch;
     }
 
-    async function init(){
+    async function init() {
       linksEl.innerHTML = '';
-      statusEl.textContent = 'Searching repository for .html files…';
+      statusEl.textContent = 'Scanning repository...';
       fallbackEl.style.display = 'none';
 
-      if(files && files.length){
+      if (files && files.length) {
         statusEl.textContent = 'Using manual list.';
         files.forEach(f => {
-          const card = createLinkCard(f, 'main');
-          linksEl.appendChild(card);
+          linksEl.appendChild(createLinkCard(f, 'main'));
         });
         return;
       }
@@ -253,18 +485,16 @@
       try {
         try {
           tree = await getRepoTree(branchCandidate);
-        } catch(e){
+        } catch (e) {
           branchCandidate = 'master';
           tree = await getRepoTree(branchCandidate);
         }
-      } catch(e){
-        // last attempt: fetch default branch then try
+      } catch (e) {
         try {
           const defaultBranch = await getDefaultBranch();
           branchCandidate = defaultBranch;
           tree = await getRepoTree(branchCandidate);
-        } catch(err){
-          // final fallback -> show message and end
+        } catch (err) {
           statusEl.textContent = 'Automatic detection failed.';
           fallbackEl.style.display = 'block';
           console.warn('Repo tree fetch failed:', err);
@@ -274,37 +504,33 @@
 
       const htmlFiles = (tree.tree || []).filter(it => it.path && it.path.toLowerCase().endsWith('.html'));
 
-      // Exclude this index file if it's in the list
       const filtered = htmlFiles
         .filter(it => !(it.path.toLowerCase() === 'index.html' || it.path.toLowerCase().endsWith('/index.html')))
         .map(it => ({ path: it.path, title: niceNameFromPath(it.path) }))
-        .sort((a,b)=>{
-          // Root files first, then alphabetical
+        .sort((a, b) => {
           const ad = a.path.split('/').length, bd = b.path.split('/').length;
-          if(ad !== bd) return ad - bd;
+          if (ad !== bd) return ad - bd;
           return a.path.localeCompare(b.path);
         });
 
-      if(filtered.length === 0){
-        statusEl.textContent = 'No HTML pages found (except index). Add pages or add manual entries to the files array in the script.';
+      if (filtered.length === 0) {
+        statusEl.textContent = 'No HTML pages found.';
         fallbackEl.style.display = 'block';
         return;
       }
 
-      statusEl.textContent = `Found ${filtered.length} page${filtered.length>1?'s':''}.`;
+      statusEl.textContent = `Found ${filtered.length} pages.`;
       filtered.forEach(item => {
-        const card = createLinkCard(item, branchCandidate);
-        linksEl.appendChild(card);
+        linksEl.appendChild(createLinkCard(item, branchCandidate));
       });
     }
 
-    // Run on load
     init().catch(err => {
       console.error(err);
-      statusEl.textContent = 'An error occurred while loading links.';
+      statusEl.textContent = 'An error occurred.';
       fallbackEl.style.display = 'block';
     });
-
   </script>
 </body>
+
 </html>
