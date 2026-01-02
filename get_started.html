@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Get Started - Payrium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+    <div
+        class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none z-0">
+    </div>
+    <div
+        class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-purple-400/5 rounded-full blur-[120px] pointer-events-none z-0">
+    </div>
+    <header class="w-full py-4 px-6 md:px-12 flex justify-between items-center relative z-20 shrink-0">
+        <div class="flex items-center gap-3 text-slate-900 dark:text-white">
+            <div
+                class="size-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight">Payrium</h1>
+        </div>
+        <button
+            class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-[20px]">help</span>
+            <span>Help Center</span>
+        </button>
+    </header>
+    <main class="flex-1 flex items-center justify-center p-4 z-10 w-full">
+        <div
+            class="w-full max-w-[400px] md:max-w-[440px] bg-white dark:bg-[#1a202c] rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-black/40 border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col transform transition-all">
+            <div class="px-6 pt-8 pb-4 flex justify-center flex-col items-center relative">
+                <div class="w-full h-36 md:h-48 rounded-xl overflow-hidden relative mb-5 group shadow-sm">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent dark:from-[#1a202c]/30 z-10">
+                    </div>
+                    <div class="w-full h-full bg-center bg-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        data-alt="Abstract 3D blue geometric shapes representing blockchain technology"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiC8F_SRTHqvk0m7_f2iTvJtM48_VCanfAinUDrCwKjBKzVg-yeN9GtPFxOxlt04VpWwc17w4J-2lZlc1Yo0RlvfaLvO9T9UJW8AOA0d0PcySsw_AxkSrylfatcn2NYGyQ3hjYfDmQxiJNEZYUR1A8ENGTGULVv4MlwkDtLgPDYx0ch20NMJcB0gwSRFPRFXptPiiCk1dnEgZlcXnu1JcOpFnQFnqkqafVg7k0YOchONh3dliPiqOA2fqyu-VG9KbpWgNRjrZO-dzZ');">
+                    </div>
+                </div>
+                <div class="text-center px-2">
+                    <h2
+                        class="text-[#111318] dark:text-white text-2xl md:text-3xl font-black leading-tight tracking-tight mb-2">
+                        Your Gateway to Web3</h2>
+                    <p
+                        class="text-[#606e8a] dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed max-w-[280px] md:max-w-[320px] mx-auto">
+                        Secure, simple, and built for everyone. Start your journey today.
+                    </p>
+                </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                    <button
+                        class="group relative w-full h-12 md:h-14 bg-primary hover:bg-blue-600 text-white rounded-xl flex items-center justify-center gap-2.5 transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-[0.98] overflow-hidden">
+                        <span class="material-symbols-outlined text-[20px] md:text-[22px]">add_circle</span>
+                        <span class="text-sm md:text-base font-bold tracking-wide">Create a New Wallet</span>
+                    </button>
+                    <p class="text-[#8692a6] dark:text-slate-500 text-[11px] font-medium text-center">I'm new to Payrium
+                    </p>
+                </div>
+                <div class="relative flex py-1 items-center px-4 opacity-60">
+                    <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                    <span
+                        class="flex-shrink-0 mx-3 text-slate-400 dark:text-slate-600 text-[10px] font-bold uppercase tracking-widest">or</span>
+                    <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <button
+                        class="group w-full h-12 md:h-14 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary hover:bg-white dark:hover:bg-slate-800 text-[#111318] dark:text-white rounded-xl flex items-center justify-center gap-2.5 transition-all duration-200 active:scale-[0.98]">
+                        <span
+                            class="material-symbols-outlined text-[20px] md:text-[22px] text-slate-500 group-hover:text-primary transition-colors">download</span>
+                        <span class="text-sm md:text-base font-semibold tracking-wide">Import Existing Wallet</span>
+                    </button>
+                    <p class="text-[#8692a6] dark:text-slate-500 text-[11px] font-medium text-center">I have a Secret
+                        Recovery Phrase</p>
+                </div>
+            </div>
+            <div class="bg-slate-50/50 dark:bg-[#151a25]/50 py-4 px-6 border-t border-slate-100 dark:border-slate-800">
+                <p class="text-center text-[10px] md:text-xs text-[#9aa2b1] dark:text-slate-500 leading-normal">
+                    By continuing, you agree to our
+                    <a class="text-primary font-medium hover:text-blue-600 transition-colors" href="#">Terms of
+                        Service</a> and
+                    <a class="text-primary font-medium hover:text-blue-600 transition-colors" href="#">Privacy
+                        Policy</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
