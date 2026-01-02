@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payrium - Send Assets</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "primary-hover": "#0b4ecf",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2230",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "md": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display transition-colors duration-200 min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Mobile Wrapper / Card -->
+<!-- This container simulates the mobile view on desktop -->
+<div class="w-full max-w-[420px] bg-card-light dark:bg-card-dark h-[800px] max-h-[90vh] rounded-2xl shadow-xl flex flex-col overflow-hidden relative border border-slate-200 dark:border-slate-700">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-5 py-4 shrink-0 z-10">
+<button class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Send Assets</h1>
+<button class="flex items-center justify-center w-10 h-10 -mr-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 flex flex-col items-center px-6 overflow-y-auto no-scrollbar">
+<!-- Token Selector -->
+<div class="mt-6 w-full flex justify-center">
+<button class="group flex items-center gap-3 bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/30 dark:hover:border-primary/50 py-2 pl-3 pr-4 rounded-full transition-all duration-200">
+<div class="w-8 h-8 rounded-full bg-black flex items-center justify-center overflow-hidden">
+<!-- Solana Logo Placeholder (using gradient for abstraction) -->
+<div class="w-full h-full bg-gradient-to-tr from-[#9945FF] to-[#14F195]" data-alt="Solana Token Gradient Icon"></div>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold leading-none text-slate-900 dark:text-white">Solana</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">SOL</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-lg ml-1 group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+<!-- Amount Input -->
+<div class="mt-12 mb-8 flex flex-col items-center w-full">
+<div class="relative w-full flex justify-center">
+<!-- Invisible input that sits on top for functionality if needed, 
+                         but for this design we style it directly to look good. -->
+<input class="w-full bg-transparent text-center text-[64px] font-bold text-slate-900 dark:text-white border-none focus:ring-0 p-0 placeholder:text-slate-300 dark:placeholder:text-slate-700 caret-primary" inputmode="decimal" placeholder="0" type="number" value=""/>
+</div>
+<!-- Fiat Value -->
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium mt-2">≈ $0.00 USD</p>
+</div>
+<!-- Percentage Chips -->
+<div class="w-full flex justify-center gap-3 mb-8">
+<button class="flex h-9 px-4 items-center justify-center rounded-lg bg-background-light dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    25%
+                </button>
+<button class="flex h-9 px-4 items-center justify-center rounded-lg bg-background-light dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    50%
+                </button>
+<button class="flex h-9 px-4 items-center justify-center rounded-lg bg-primary/10 text-primary dark:text-primary-400 text-sm font-bold border border-primary/20 hover:bg-primary/20 transition-colors">
+                    MAX
+                </button>
+</div>
+<!-- Available Balance -->
+<div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 text-sm">account_balance_wallet</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Available: <span class="text-slate-900 dark:text-white font-semibold">14.2405 SOL</span></p>
+</div>
+</main>
+<!-- Keyboard / Numpad Area (Visual filler for desktop to look like mobile app context, or space for actual keyboard on mobile) -->
+<div class="flex-1 w-full flex items-end pb-8 px-6 bg-gradient-to-t from-card-light via-card-light to-transparent dark:from-card-dark dark:via-card-dark z-10 pointer-events-none">
+<!-- This space is intentionally left empty to simulate where the keyboard would be on mobile, 
+                 or to give "breathing room" on desktop. -->
+</div>
+<!-- Bottom Action Button -->
+<div class="w-full px-6 pb-6 pt-2 bg-card-light dark:bg-card-dark z-20">
+<button class="w-full h-14 bg-primary hover:bg-primary-hover text-white text-lg font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]">
+<span>Review</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Background decoration elements for desktop feel -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>
