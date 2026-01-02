@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payrium - Solana Token Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "card-dark": "#161b26",
+                        "card-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #282e39; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f4756; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex items-center justify-center p-4">
+<!-- Mobile Container Wrapper -->
+<div class="w-full max-w-[420px] h-[850px] bg-white dark:bg-[#111318] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative border border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<header class="flex items-center justify-between px-5 py-4 z-20 bg-white/80 dark:bg-[#111318]/80 backdrop-blur-md sticky top-0">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<div class="text-sm font-medium text-slate-500 dark:text-slate-400 tracking-wide">Wallet 1</div>
+<div class="flex items-center gap-1.5">
+<span class="text-base font-bold text-slate-900 dark:text-white">Solana</span>
+<span class="material-symbols-outlined text-[16px] text-slate-500 dark:text-slate-400">expand_more</span>
+</div>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</header>
+<!-- Main Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto pb-6 no-scrollbar">
+<!-- Hero Section: Token Info -->
+<div class="flex flex-col items-center pt-6 pb-8 px-6">
+<!-- Token Icon -->
+<div class="w-16 h-16 mb-6 rounded-full bg-black p-1 shadow-lg shadow-black/20">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-[#9945FF] to-[#14F195] flex items-center justify-center">
+<!-- Solana Logo Path -->
+<svg class="w-9 h-9 text-white" fill="none" viewbox="0 0 397 311" xmlns="http://www.w3.org/2000/svg">
+<path d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7zm263.5-163.6c-2.4 2.4-5.7 3.8-9.2 3.8H1.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7zM64.6 156c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z" fill="currentColor"></path>
+</svg>
+</div>
+</div>
+<!-- Balance -->
+<h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">$1,240.50</h1>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-lg font-medium text-slate-500 dark:text-slate-400">12.5 SOL</span>
+</div>
+<!-- Meta/Change -->
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 dark:bg-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+<span>+$28.50 (2.4%)</span>
+</div>
+</div>
+<!-- Actions Bar -->
+<div class="px-6 mb-8">
+<div class="grid grid-cols-4 gap-4">
+<!-- Send -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-[#282e39] flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined">north_east</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Send</span>
+</button>
+<!-- Receive -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-[#282e39] flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined">south_west</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Receive</span>
+</button>
+<!-- Swap -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-[#282e39] flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Swap</span>
+</button>
+<!-- Buy -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-[#282e39] flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Buy</span>
+</button>
+</div>
+</div>
+<!-- Transactions List -->
+<div class="rounded-t-3xl bg-slate-50 dark:bg-card-dark min-h-[400px] border-t border-slate-100 dark:border-slate-800/50 p-6 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Activity</h3>
+<button class="text-sm font-medium text-primary hover:text-primary/80 transition-colors">See all</button>
+</div>
+<div class="space-y-1">
+<!-- Date Header -->
+<div class="px-2 pb-2 pt-1 text-xs font-semibold text-slate-400 uppercase tracking-wider">Today</div>
+<!-- Transaction Item: Receive -->
+<div class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-slate-100 dark:hover:bg-[#1F2530] transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-500/10 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-[20px]">south</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Received</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">From 8x92...3k9a</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-green-600 dark:text-green-400">+2.5 SOL</span>
+<span class="text-xs text-slate-400">$240.25</span>
+</div>
+</div>
+<!-- Transaction Item: Sent -->
+<div class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-slate-100 dark:hover:bg-[#1F2530] transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[20px]">north</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Sent</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">To Coinbase</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">-10.0 SOL</span>
+<span class="text-xs text-slate-400">$985.10</span>
+</div>
+</div>
+<!-- Date Header -->
+<div class="px-2 pb-2 pt-6 text-xs font-semibold text-slate-400 uppercase tracking-wider">Yesterday</div>
+<!-- Transaction Item: Jupiter Swap -->
+<div class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-slate-100 dark:hover:bg-[#1F2530] transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<!-- dApp Icon placeholder -->
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-400 to-yellow-300 p-[1px]">
+<img alt="Jupiter" class="w-full h-full rounded-full bg-black object-cover" data-alt="Jupiter Exchange Logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSleLFTayfTcpHWGlv3vloM_JNwi-pP6d5zj_5MXa4jEjctWt17h1Q_TQ78MxXM_ciXHCTW-cTiOgunPQo9vDdA7Et6bj9aYW7r00YmsSSPYFLTYCrK0KkzLyZkfhFFXXKqJsdTzDNlpGDtQId4qr89lNN0RdRCBIT15vpQ9kuOqvBjwOBDOql-52UexWowkeCrhnETU-IdADMam7czVkBDb6-7X6NfcBQjWedn8uiJszo9lL1E4VJGyhbr70oA11sIfBm2xoDwAD"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Jupiter Swap</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Swapped SOL to USDC</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">-0.5 SOL</span>
+<span class="text-xs text-slate-400">Fee: $0.002</span>
+</div>
+</div>
+<!-- Transaction Item: Sent -->
+<div class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-slate-100 dark:hover:bg-[#1F2530] transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[20px]">north</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Sent</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">To Phantom Wallet</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">-50.0 SOL</span>
+<span class="text-xs text-slate-400">$4,812.00</span>
+</div>
+</div>
+<!-- Transaction Item: Interaction -->
+<div class="group flex items-center justify-between p-3 -mx-3 rounded-xl hover:bg-slate-100 dark:hover:bg-[#1F2530] transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">contract</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Contract Interaction</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Magic Eden</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">-0.05 SOL</span>
+<span class="text-xs text-slate-400">Gas Fee</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fake Home Indicator for "Mobile" feel -->
+<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full opacity-50"></div>
+</div>
+</body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payrium - Sent Success</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 font-display">
+<!-- Mobile Viewport Container -->
+<!-- This container simulates a mobile device screen on a desktop browser -->
+<main class="relative flex flex-col w-full max-w-[390px] h-[844px] bg-white dark:bg-background-dark shadow-2xl overflow-hidden rounded-[40px] border-[8px] border-gray-900 dark:border-gray-800">
+<!-- Status Bar Simulation (Optional for visual context) -->
+<div class="absolute top-0 left-0 right-0 h-12 z-10 flex justify-between items-end px-6 pb-2 text-xs font-medium text-gray-900 dark:text-white opacity-0 md:opacity-100">
+<span>9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">wifi</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">battery_full</span>
+</div>
+</div>
+<!-- Content Scroll Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar pt-16 pb-8 px-6 flex flex-col relative z-0">
+<!-- Success Hero -->
+<div class="flex flex-col items-center justify-center mt-8 mb-10 text-center animate-fade-in-up">
+<!-- Success Animated Icon Simulation -->
+<div class="relative mb-8">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl scale-150"></div>
+<div class="relative h-24 w-24 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white text-5xl font-bold">check</span>
+</div>
+</div>
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">Sent Successfully</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Your transaction is on its way!</p>
+</div>
+<!-- Amount Display -->
+<div class="flex flex-col items-center mb-10">
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-black text-gray-900 dark:text-white tracking-tight">- 15.4</span>
+<span class="text-2xl font-bold text-gray-500 dark:text-gray-400">SOL</span>
+</div>
+<p class="text-gray-400 dark:text-gray-500 font-medium mt-2">≈ $1,420.50 USD</p>
+</div>
+<!-- Recipient Card -->
+<div class="w-full bg-background-light dark:bg-white/5 rounded-2xl p-4 mb-8 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-full bg-cover bg-center shrink-0 border border-gray-200 dark:border-gray-700" data-alt="Avatar of the recipient Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA533fTyRoqXkJbYK9oJi2R8dLOlaOx9rEXtRkJJmWN3axU5Uwy0uSG5oIcCibX1QfemszYJiIgCa9Ut9tt3wmFOxrhEwgaqIAgRSBwqlbFjdjV9ZtMHFER21pMZscWVWM1F3XgpV2c7VO2-BQgYC2CUSMWnkt4yJItkFPZgUGXkZj_zoqbqS5z8FZcZhLA5It6wbj9YYqrr8dBVpjDgP5d1xZJnYwMq1O72OCepX0dVOhwcYzr71RO2uprLcsrJGq49Gj-ye1Apg_i");'>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-xs text-gray-500 dark:text-gray-400">Sent to</span>
+<span class="text-sm font-bold text-gray-900 dark:text-white truncate">Alex.sol</span>
+</div>
+</div>
+<div class="text-xs font-mono text-gray-400 bg-white dark:bg-black/20 px-2 py-1 rounded">
+                    8x9z...z4q
+                </div>
+</div>
+<!-- Transaction Details -->
+<div class="w-full space-y-4 border-t border-gray-100 dark:border-gray-800 pt-6 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">Network Fee</span>
+<div class="flex items-center gap-1 text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded text-xs">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+                        &lt; $0.001
+                    </div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">Date</span>
+<span class="text-gray-900 dark:text-white font-medium">Oct 24, 10:42 AM</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">Ref ID</span>
+<div class="flex items-center gap-1 cursor-pointer group">
+<span class="text-gray-900 dark:text-white font-mono text-xs">#8293...1923</span>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[14px]">content_copy</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto flex flex-col gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-xl h-12 px-5 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all text-white text-base font-bold tracking-wide shadow-lg shadow-primary/20">
+                    Done
+                </button>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-xl h-12 px-5 bg-transparent hover:bg-gray-50 dark:hover:bg-white/5 active:scale-[0.98] transition-all text-gray-600 dark:text-gray-300 gap-2 text-sm font-semibold">
+<span>View on Solana Explorer</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Bottom Safe Area Indicator (iOS Home Bar) -->
+<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-1/3 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full z-10"></div>
+</main>
+<!-- Decoration Background on Desktop -->
+<div class="fixed inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&amp;w=2832&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-5 dark:opacity-10 blur-sm" data-alt="Abstract 3D shapes background pattern"></div>
+</body></html>
