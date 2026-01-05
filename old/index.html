@@ -326,6 +326,24 @@
         <p>A collection of interface screens and components for the Payrium wallet application.</p>
       </div>
       <div class="controls">
+        <button class="btn-control" id="sortAlphaBtn" title="Sort Alphabetically">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 10l5 5 5-5" />
+            <path d="M4 6h7" />
+            <path d="M4 12h7" />
+            <path d="M4 18h7" />
+          </svg>
+          Name
+        </button>
+        <button class="btn-control" id="sortTimeBtn" title="Sort by Time">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Time
+        </button>
         <button class="btn-control" id="refreshBtn" title="Refresh list">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -359,52 +377,84 @@
     /* Configuration */
     // Manual list of files in the 'old' directory
     const fileList = [
-      "a1.html", "a2.html", "a3.html", "a3i.html", "a4.html", "a5.html",
-      "aa2.html", "aa3.html", "aa4.html", "aa5.html",
-      "about_payrium_screen.html",
-      "create_wallet__confirm_phrase.html",
-      "create_wallet__display_phrase.html",
-      "create_wallet__recovery_info.html",
-      "dao_governance_preview_1.html",
-      "dao_governance_preview_2.html",
-      "get_started.html",
-      "import_wallet__input_phrase_1.html",
-      "import_wallet__input_phrase_2.html",
-      "import_wallet__options.html",
-      "import_wallet__success.html",
-      "onboarding__community_governed.html",
-      "onboarding__easy_payments.html",
-      "onboarding__multi-network_wallet.html",
-      "payrium_splash_screen.html",
-      "portfolio_home_screen_1.html",
-      "portfolio_home_screen_2.html",
-      "pum_token_info_screen.html",
-      "receive_token_screen.html",
-      "security_settings.html",
-      "send__enter_recipient_address.html",
-      "send__review_transaction.html",
-      "send__select_token_&_amount.html",
-      "send__success_confirmation.html",
-      "settings_home.html",
-      "swap__preview_screen.html",
-      "swap__setup_screen.html",
-      "swap__success_screen.html",
-      "token_detail_screen.html",
-      "wallet_created_success.html",
-      "wallet_settings.html"
+      { path: "a1.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "a2.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "a3.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "a3i.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "a4.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "a5.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "aa2.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "aa3.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "aa4.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "aa5.html", lastModified: "2026-01-02T21:24:55" },
+      { path: "about_payrium_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "create_wallet__confirm_phrase.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "create_wallet__display_phrase.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "create_wallet__recovery_info.html", lastModified: "2026-01-02T23:12:33" },
+      { path: "dao_governance_preview_1.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "dao_governance_preview_2.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "get_started.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "import_wallet__input_phrase_1.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "import_wallet__input_phrase_2.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "import_wallet__options.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "import_wallet__success.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "onboarding__community_governed.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "onboarding__easy_payments.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "onboarding__multi-network_wallet.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "payrium_splash_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "portfolio_home_screen_1.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "portfolio_home_screen_2.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "pum_token_info_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "receive_token_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "security_settings.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "send__enter_recipient_address.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "send__review_transaction.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "send__select_token_&_amount.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "send__success_confirmation.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "settings_home.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "swap__preview_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "swap__setup_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "swap__success_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "token_detail_screen.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "wallet_created_success.html", lastModified: "2025-12-31T20:55:33" },
+      { path: "wallet_settings.html", lastModified: "2025-12-31T20:55:33" }
     ];
 
     const linksEl = document.getElementById('links');
     const statusEl = document.getElementById('status');
     const fallbackEl = document.getElementById('fallback');
     const refreshBtn = document.getElementById('refreshBtn');
+    const sortAlphaBtn = document.getElementById('sortAlphaBtn');
+    const sortTimeBtn = document.getElementById('sortTimeBtn');
 
-    refreshBtn.addEventListener('click', init);
+    let currentSort = 'alpha'; // 'alpha' or 'time'
+    let sortDirection = 'asc'; // 'asc' or 'desc'
+
+    refreshBtn.addEventListener('click', () => init());
+    sortAlphaBtn.addEventListener('click', () => toggleSort('alpha'));
+    sortTimeBtn.addEventListener('click', () => toggleSort('time'));
+
+    function toggleSort(type) {
+      if (currentSort === type) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort = type;
+        sortDirection = 'asc'; // Default to asc for new sort type
+        if (type === 'time') sortDirection = 'desc'; // Default to newest first for time
+      }
+      render();
+    }
 
     function niceNameFromPath(path) {
       const parts = path.split('/');
       const name = parts[parts.length - 1].replace(/[-_]/g, ' ').replace(/\.html$/i, '');
       return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    function formatDate(isoString) {
+      if (!isoString) return '';
+      const date = new Date(isoString);
+      return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
 
     function createLinkCard(item) {
@@ -434,7 +484,7 @@
 
       const pathEl = document.createElement('div');
       pathEl.className = 'card-path';
-      pathEl.textContent = item.path;
+      pathEl.innerHTML = `${item.path} <span style="opacity:0.5; margin-left:8px;">${formatDate(item.lastModified)}</span>`;
 
       text.appendChild(title);
       text.appendChild(pathEl);
@@ -482,12 +532,25 @@
       return a;
     }
 
-    function init() {
+    function render() {
       linksEl.innerHTML = '';
-      statusEl.textContent = 'Loading files...';
-      fallbackEl.style.display = 'none';
 
-      const files = fileList.map(f => ({ path: f }));
+      let files = [...fileList]; // Copy array
+
+      // Sort
+      files.sort((a, b) => {
+        if (currentSort === 'alpha') {
+          return sortDirection === 'asc'
+            ? a.path.localeCompare(b.path)
+            : b.path.localeCompare(a.path);
+        } else {
+          const timeA = new Date(a.lastModified || 0).getTime();
+          const timeB = new Date(b.lastModified || 0).getTime();
+          return sortDirection === 'asc'
+            ? timeA - timeB
+            : timeB - timeA;
+        }
+      });
 
       if (files.length === 0) {
         statusEl.textContent = 'No HTML pages found.';
@@ -495,10 +558,16 @@
         return;
       }
 
-      statusEl.textContent = `Found ${files.length} pages.`;
+      statusEl.textContent = `Found ${files.length} pages. Sorted by ${currentSort} (${sortDirection}).`;
       files.forEach(item => {
         linksEl.appendChild(createLinkCard(item));
       });
+    }
+
+    function init() {
+      statusEl.textContent = 'Loading files...';
+      fallbackEl.style.display = 'none';
+      render();
     }
 
     init();

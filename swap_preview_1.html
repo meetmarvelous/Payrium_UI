@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payrium - Swap Preview</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        /* Mobile slider animation simulation */
+        .slider-shine {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+            background-size: 200% 100%;
+            animation: shine 3s infinite linear;
+        }
+        @keyframes shine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col overflow-hidden">
+<!-- Background Decoration (Abstract Shapes for Desktop Vibe) -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-[40%] -right-[10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-1 items-center justify-center p-4 sm:p-8 h-screen">
+<!-- Mobile Card Container -->
+<div class="w-full max-w-[400px] h-full max-h-[850px] bg-white dark:bg-[#151a23] rounded-3xl shadow-2xl flex flex-col border border-slate-100 dark:border-slate-800 overflow-hidden relative">
+<!-- Top Bar / Navigation -->
+<div class="px-5 pt-6 pb-2 flex items-center justify-between shrink-0">
+<button class="p-2 -ml-2 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1 pr-8 text-slate-900 dark:text-white">Review Swap</h1>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-5 py-2 no-scrollbar">
+<!-- Verification Subtitle -->
+<div class="mb-6 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Verify details before confirming</p>
+</div>
+<!-- Swap Card (Combined Input/Output) -->
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700/50 overflow-hidden mb-6 relative">
+<!-- You Pay Section -->
+<div class="p-4 flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-black overflow-hidden flex-shrink-0 border border-slate-200 dark:border-slate-600">
+<img class="h-full w-full object-cover" data-alt="Solana Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5PEkfvkFmjd0nzp4Rju4M4T86Bsva2-Ktazhrdo8ZQ1qnqcQvNl3k4sSur0SgESjXMBLxnIy58jK2liQJ1s-L3tkaOywyGfFrpEsIOw9aMkt50z4ir9eiu2T6ezDAnvJd7UogpVLtiITLbUAg0BkmbvGTh-OvPpwpTL6OayBknMTrJr5TDEqVrbSsSUsV1abtxqIfk9qd-z1dkj21lQuHS8VeZlf9zwH_e-83l3CrgeaE52BCT0F_MxzoolvzIRhF7Pv-SjMxVtU2"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">You Pay</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">10 SOL</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm text-slate-500 dark:text-slate-400">~$1,450.20</span>
+</div>
+</div>
+<!-- Divider with Arrow -->
+<div class="relative h-px bg-slate-200 dark:bg-slate-700 mx-4">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#1e2530] border border-slate-200 dark:border-slate-700 rounded-full p-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px] block">arrow_downward</span>
+</div>
+</div>
+<!-- You Receive Section -->
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-blue-500 overflow-hidden flex-shrink-0 border border-slate-200 dark:border-slate-600">
+<img class="h-full w-full object-cover" data-alt="USDC Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIuu-sanAcaNHtDXkgRj1S_5iTZOoZdiiCFQqhx9I8eG1P9pyev2XhjyhKOow2Rwc8wk96b5A4oP7G0SwjZzrQt3r53rGWz7FQ8B0NL-nlSR-AXV2O9thsIPLvWpfOvLlidre6p1b3Y4t7s78MMEjz6nfnJ3nMAILS0M2KgDGJ0sow8_aBDqHDRzlVZXUbozBeacOo4BL77CppLoqXrs1Mj0cyK_S103UAplM_DqaLDvWPF6i_2wN70mcnj6kZOPOL3H9b48QtfIGS"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">You Receive</span>
+<span class="text-xl font-bold text-green-600 dark:text-green-400">1450.23 USDC</span>
+</div>
+</div>
+<!-- Positive impact indicator -->
+<div class="flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full px-2 py-0.5">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-[14px] mr-1">trending_up</span>
+<span class="text-xs font-semibold text-green-600 dark:text-green-400">0.02%</span>
+</div>
+</div>
+</div>
+<!-- Transaction Details -->
+<div class="space-y-3 mb-6">
+<h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">Transaction Details</h3>
+<div class="bg-white dark:bg-[#151a23] rounded-xl">
+<!-- Rate -->
+<div class="flex justify-between items-center py-2 px-1">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Rate</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-medium">1 SOL ≈ 145.02 USDC</span>
+</div>
+<!-- Network Fee -->
+<div class="flex justify-between items-center py-2 px-1">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Network Fee</span>
+<span class="material-symbols-outlined text-slate-400 text-[16px] cursor-help">info</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-green-600 dark:text-green-400 text-sm font-medium">~0.00005 SOL</span>
+<span class="text-xs text-slate-400">(&lt;$0.01)</span>
+</div>
+</div>
+<!-- Price Impact -->
+<div class="flex justify-between items-center py-2 px-1">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Price Impact</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-medium">&lt;0.1%</span>
+</div>
+<!-- Route -->
+<div class="flex justify-between items-center py-2 px-1">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Route</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-medium text-slate-900 dark:text-white">
+<span>Raydium</span>
+<span class="material-symbols-outlined text-[12px] text-slate-400">arrow_forward</span>
+<span>Orca</span>
+</div>
+</div>
+<!-- Separator -->
+<div class="border-t border-slate-100 dark:border-slate-800 my-2"></div>
+<!-- Minimum Received -->
+<div class="flex justify-between items-center py-2 px-1">
+<div class="flex items-center gap-1.5">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Minimum Received</span>
+<span class="material-symbols-outlined text-slate-400 text-[16px] cursor-help">info</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-semibold">1448.00 USDC</span>
+</div>
+</div>
+</div>
+<!-- Disclaimer Text (MetaText) -->
+<div class="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-3 mb-24"> <!-- mb-24 to clear fixed bottom button -->
+<p class="text-blue-600 dark:text-blue-300 text-xs text-center leading-relaxed">
+                        Output is estimated. You will receive at least 1448.00 USDC or the transaction will revert automatically.
+                    </p>
+</div>
+</div>
+<!-- Fixed Bottom Action Area -->
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-white via-white to-transparent dark:from-[#151a23] dark:via-[#151a23] pt-10">
+<!-- Slide to Confirm Simulation -->
+<div class="relative h-14 bg-primary rounded-full overflow-hidden shadow-lg shadow-primary/30 cursor-pointer group select-none">
+<!-- Background Shine Effect -->
+<div class="absolute inset-0 slider-shine opacity-20"></div>
+<!-- Text Label -->
+<div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<span class="text-white font-semibold text-lg tracking-wide">Slide to Swap</span>
+</div>
+<!-- Slider Handle -->
+<div class="absolute left-1 top-1 bottom-1 w-12 bg-white rounded-full flex items-center justify-center z-20 shadow-md group-hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Desktop Floating Info (Optional Branding/Context) -->
+<div class="absolute bottom-8 right-8 hidden md:block opacity-50">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">security</span>
+<span class="text-sm font-medium">Secured by Payrium</span>
+</div>
+</div>
+</div>
+</body></html>
