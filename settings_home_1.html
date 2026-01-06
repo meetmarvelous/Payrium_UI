@@ -1,214 +1,247 @@
 <!DOCTYPE html>
+<html class="light" lang="en">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Payrium Settings</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Payrium Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
                         "primary": "#0d59f2",
-                        "background-light": "#f5f6f8",
-                        "background-dark": "#101622",
+                        "background-light": "#ffffff",
+                        "background-off": "#f8f9fc",
+                        "text-main": "#0f172a",
+                        "text-sub": "#64748b",
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        /* Custom scrollbar hide for cleaner mobile look */
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] antialiased overflow-x-hidden relative min-h-screen">
-<!-- Ambient Background Branding -->
-<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px]"></div>
-<div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple-500/10 blur-[100px]"></div>
-</div>
-<!-- Main Content Wrapper (Desktop Center Layout) -->
-<div class="relative z-10 flex min-h-screen w-full flex-col items-center justify-center py-8 px-4">
-<!-- Mobile Container Simulation -->
-<div class="w-full max-w-[480px] bg-white dark:bg-[#1a202c] rounded-2xl shadow-xl overflow-hidden flex flex-col min-h-[800px] border border-[#f0f1f5] dark:border-gray-800">
-<!-- Header -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f1f5] dark:border-gray-800 px-6 py-4 bg-white dark:bg-[#1a202c] sticky top-0 z-20">
-<div class="flex items-center gap-4">
-<button class="text-[#111318] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded-full transition-colors">
-<span class="material-symbols-outlined block" style="font-size: 24px;">arrow_back</span>
-</button>
-<h2 class="text-[#111318] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Settings</h2>
-</div>
-<button class="flex items-center justify-center text-[#111318] dark:text-white p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-<span class="material-symbols-outlined block" style="font-size: 24px;">notifications</span>
-</button>
-</header>
-<!-- Scrollable Content -->
-<div class="flex-1 overflow-y-auto no-scrollbar pb-8">
-<!-- Profile Section -->
-<div class="px-6 pt-6 pb-2">
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-16 w-16 shadow-sm border-2 border-primary/20" data-alt="Abstract colorful gradient avatar representing user profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuPPX13BsKSAVxDVTRvJ3D0QIMRYm0LBdzIM-UkhYy8oe4MCagg809KQ7hq_9Yan5PfWBBhk4BmtguGkBqFx4gb0loMpqU-9OmpIF4iCHy-FbodUSFnfHt5MZ_px4HOyZR-h2K766odW-xmyi_aMKMlOMJDustXhj7Eveybu1_6T9fHwjNbrHLvly4ZpvyIPUd0CC7tEJTIW4SF1CQ-ViiqeqZ9ejg-Zqn7usDxEp86-iWEY2xwH33ERGSLosQTrqP5NhGd45bDTwM");'>
-</div>
-<div class="flex flex-col justify-center">
-<p class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Alex Doe</p>
-<div class="flex items-center gap-2 mt-1">
-<span class="text-[#606e8a] text-sm font-medium">8xF...3k9</span>
-<div class="flex items-center gap-1 bg-green-50 text-green-700 px-2 py-0.5 rounded-full border border-green-100">
-<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-<span class="text-xs font-bold uppercase tracking-wide">Connected</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Group 1: Account & Security -->
-<div class="pt-6">
-<h3 class="text-[#606e8a] text-xs font-bold uppercase tracking-wider px-6 pb-2">Account &amp; Security</h3>
-<!-- Security Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-[#f0f1f5] dark:border-gray-800 group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">shield</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">Security</p>
-<p class="text-[#606e8a] text-xs font-normal">Password, 2FA, Biometrics</p>
-</div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-<!-- Wallet Settings Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">account_balance_wallet</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">Wallet Settings</p>
-<p class="text-[#606e8a] text-xs font-normal">Solana Mainnet • USD</p>
-</div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-</div>
-<!-- Group 2: The Payrium Ecosystem -->
-<div class="pt-6">
-<h3 class="text-[#606e8a] text-xs font-bold uppercase tracking-wider px-6 pb-2">Ecosystem</h3>
-<!-- PUM Token Banner (Special Card) -->
-<div class="px-6 pb-4">
-<div class="relative overflow-hidden flex items-center justify-between gap-4 rounded-xl bg-gradient-to-br from-[#101622] to-[#1e293b] p-4 shadow-lg border border-gray-100/10">
-<!-- Abstract decorative circle -->
-<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
-<div class="flex flex-col gap-1 z-10">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-yellow-400" style="font-size: 16px;">hotel_class</span>
-<p class="text-white text-xs font-bold uppercase tracking-wide opacity-90">Gold Tier</p>
-</div>
-<p class="text-white text-base font-bold leading-tight">PUM Token Status</p>
-<p class="text-gray-300 text-xs font-normal leading-normal">Staking Active: 5.2% APY</p>
-</div>
-<button class="z-10 flex cursor-pointer items-center justify-center rounded-lg h-8 px-4 bg-primary hover:bg-blue-600 text-white text-xs font-bold transition-colors">
-                                View
-                            </button>
-</div>
-</div>
-<!-- DAO Governance Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-[#f0f1f5] dark:border-gray-800 group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">how_to_vote</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">Governance</p>
-<p class="text-[#606e8a] text-xs font-normal">Vote on proposals</p>
-</div>
-<div class="bg-red-50 text-red-600 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide border border-red-100">
-                            1 Active
+
+<body class="bg-gray-50 text-text-main font-display antialiased overflow-hidden h-screen flex flex-col">
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-gray-100 px-6 py-4 bg-white z-30 flex-none shadow-sm">
+        <div class="flex items-center gap-4">
+            <button class="text-text-main hover:bg-gray-50 p-2 -ml-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined block">arrow_back</span>
+            </button>
+            <h2 class="text-text-main text-lg font-bold">Settings</h2>
+        </div>
+        <button
+            class="flex items-center justify-center text-text-main p-2 rounded-full hover:bg-gray-50 transition-colors relative">
+            <span class="material-symbols-outlined block">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+        </button>
+    </header>
+    <main class="flex-1 overflow-y-auto bg-gray-50 no-scrollbar flex justify-center">
+        <div class="w-full max-w-2xl px-4 py-6 md:px-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                <div class="flex items-center gap-4">
+                    <div class="bg-center bg-no-repeat bg-cover rounded-full h-16 w-16 shadow-sm border border-gray-100"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuPPX13BsKSAVxDVTRvJ3D0QIMRYm0LBdzIM-UkhYy8oe4MCagg809KQ7hq_9Yan5PfWBBhk4BmtguGkBqFx4gb0loMpqU-9OmpIF4iCHy-FbodUSFnfHt5MZ_px4HOyZR-h2K766odW-xmyi_aMKMlOMJDustXhj7Eveybu1_6T9fHwjNbrHLvly4ZpvyIPUd0CC7tEJTIW4SF1CQ-ViiqeqZ9ejg-Zqn7usDxEp86-iWEY2xwH33ERGSLosQTrqP5NhGd45bDTwM");'>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-text-main text-lg font-bold">Alex Doe</p>
+                        <div class="flex items-center gap-2 mt-0.5">
+                            <span class="text-text-sub text-sm font-medium">@alexdoe.sol</span>
+                            <div class="w-1 h-1 rounded-full bg-gray-300"></div>
+                            <span
+                                class="text-xs text-primary font-semibold bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">Basic
+                                Tier</span>
                         </div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-<!-- Airdrops / Rewards Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">card_giftcard</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">Rewards &amp; Airdrops</p>
-<p class="text-[#606e8a] text-xs font-normal">Check eligibility</p>
-</div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-</div>
-<!-- Group 3: Information -->
-<div class="pt-6">
-<h3 class="text-[#606e8a] text-xs font-bold uppercase tracking-wider px-6 pb-2">Information</h3>
-<!-- About Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-[#f0f1f5] dark:border-gray-800 group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">info</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">About Payrium</p>
-</div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-<!-- Support Item -->
-<button class="w-full flex items-center gap-4 bg-white dark:bg-[#1a202c] px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-<div class="text-primary flex items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">support_agent</span>
-</div>
-<div class="flex flex-col items-start flex-1">
-<p class="text-[#111318] dark:text-white text-sm font-semibold leading-normal">Support</p>
-</div>
-<span class="material-symbols-outlined text-[#9ca3af]" style="font-size: 20px;">chevron_right</span>
-</button>
-</div>
-<!-- Footer Actions -->
-<div class="pt-10 px-6 pb-6 flex flex-col gap-6 items-center">
-<button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-red-50 text-red-600 font-bold hover:bg-red-100 transition-colors">
-<span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-text-sub text-xs font-bold uppercase tracking-wider mb-3 pl-2">General</h3>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-50 group">
+                            <div
+                                class="bg-blue-50 text-primary flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">shield</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <p class="text-text-main text-sm font-semibold">Security</p>
+                                <p class="text-text-sub text-xs">2FA, Password, Face ID</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors group">
+                            <div
+                                class="bg-blue-50 text-primary flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <p class="text-text-main text-sm font-semibold">Wallet Settings</p>
+                                <p class="text-text-sub text-xs">Solana Mainnet • USD</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-text-sub text-xs font-bold uppercase tracking-wider mb-3 pl-2">Payrium Ecosystem
+                    </h3>
+                    <div
+                        class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-blue-500 p-5 text-white shadow-lg shadow-blue-200 mb-4">
+                        <div
+                            class="absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-white/10 blur-2xl">
+                        </div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div
+                                        class="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 backdrop-blur-sm">
+                                        <span class="material-symbols-outlined text-[14px]">token</span>
+                                    </div>
+                                    <span class="text-xs font-bold tracking-wide uppercase opacity-90">PUM Token</span>
+                                </div>
+                                <h4 class="text-xl font-bold">1,250 PUM</h4>
+                                <p class="text-blue-100 text-xs mt-1">Staking Rewards: +4.5% APY</p>
+                            </div>
+                            <button
+                                class="bg-white text-primary text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm hover:bg-blue-50 transition-colors">
+                                Manage
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-50 group">
+                            <div
+                                class="bg-purple-50 text-purple-600 flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">how_to_vote</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="text-text-main text-sm font-semibold">DAO Governance</p>
+                                    <span
+                                        class="bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded border border-red-200">1
+                                        Active</span>
+                                </div>
+                                <p class="text-text-sub text-xs">Vote on proposals</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors group">
+                            <div
+                                class="bg-orange-50 text-orange-600 flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">card_giftcard</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <p class="text-text-main text-sm font-semibold">Rewards &amp; Airdrops</p>
+                                <p class="text-text-sub text-xs">Check eligibility</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-text-sub text-xs font-bold uppercase tracking-wider mb-3 pl-2">Information</h3>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-50 group">
+                            <div
+                                class="bg-gray-100 text-gray-600 flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-gray-800 group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">info</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <p class="text-text-main text-sm font-semibold">About Payrium</p>
+                                <p class="text-text-sub text-xs">Version 2.4.1</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                        <button
+                            class="w-full flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-colors group">
+                            <div
+                                class="bg-gray-100 text-gray-600 flex items-center justify-center rounded-xl shrink-0 size-10 group-hover:bg-gray-800 group-hover:text-white transition-colors duration-200">
+                                <span class="material-symbols-outlined text-[20px]">support_agent</span>
+                            </div>
+                            <div class="flex flex-col items-start flex-1">
+                                <p class="text-text-main text-sm font-semibold">Help &amp; Support</p>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-300 text-[20px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="pt-2 pb-6">
+                    <button
+                        class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-white text-red-600 text-sm font-bold hover:bg-red-50 transition-colors border border-gray-200 shadow-sm">
+                        <span class="material-symbols-outlined text-[20px]">logout</span>
                         Log Out
                     </button>
-<div class="text-center">
-<p class="text-[#606e8a] text-xs font-medium">Payrium v1.2.0</p>
-<p class="text-[#9ca3af] text-[10px] mt-1">Powered by Solana</p>
-</div>
-</div>
-</div>
-<!-- Bottom Navigation Bar (Mockup for context) -->
-<div class="border-t border-[#f0f1f5] dark:border-gray-800 bg-white dark:bg-[#1a202c] px-6 py-3 flex justify-between items-center">
-<div class="flex flex-col items-center gap-1 text-[#9ca3af] hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined" style="font-size: 24px;">account_balance_wallet</span>
-<span class="text-[10px] font-medium">Wallet</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-[#9ca3af] hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined" style="font-size: 24px;">swap_horiz</span>
-<span class="text-[10px] font-medium">Swap</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-[#9ca3af] hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined" style="font-size: 24px;">explore</span>
-<span class="text-[10px] font-medium">Discover</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-primary cursor-pointer">
-<span class="material-symbols-outlined" style="font-size: 24px; font-variation-settings: 'FILL' 1;">settings</span>
-<span class="text-[10px] font-medium">Settings</span>
-</div>
-</div>
-</div>
-</div>
-</body></html>
+                    <div class="text-center mt-6">
+                        <div class="flex items-center justify-center gap-1.5 opacity-60">
+                            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Powered by
+                                Solana</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav
+        class="bg-white border-t border-gray-100 px-8 py-3 pb-6 flex justify-center items-center flex-none z-30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)]">
+        <div class="flex justify-between items-center w-full max-w-lg">
+            <button
+                class="flex flex-col items-center gap-1.5 text-gray-400 hover:text-primary transition-colors group w-16">
+                <span
+                    class="material-symbols-outlined group-hover:scale-110 transition-transform text-[24px]">home</span>
+                <span class="text-[10px] font-medium">Home</span>
+            </button>
+            <button
+                class="flex flex-col items-center gap-1.5 text-gray-400 hover:text-primary transition-colors group w-16">
+                <span
+                    class="material-symbols-outlined group-hover:scale-110 transition-transform text-[24px]">history</span>
+                <span class="text-[10px] font-medium">Activity</span>
+            </button>
+            <button
+                class="flex flex-col items-center gap-1.5 text-gray-400 hover:text-primary transition-colors group w-16">
+                <span
+                    class="material-symbols-outlined group-hover:scale-110 transition-transform text-[24px]">groups</span>
+                <span class="text-[10px] font-medium">DAO</span>
+            </button>
+            <button class="flex flex-col items-center gap-1.5 text-primary transition-colors w-16">
+                <span class="material-symbols-outlined text-[24px]"
+                    style="font-variation-settings: 'FILL' 1;">settings</span>
+                <span class="text-[10px] font-bold">Settings</span>
+            </button>
+        </div>
+    </nav>
+
+</body>
+
+</html>
